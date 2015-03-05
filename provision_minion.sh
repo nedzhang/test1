@@ -13,16 +13,16 @@ yum install -y http://cbs.centos.org/kojifiles/packages/etcd/0.4.6/7.el7.centos/
 yum -y install --enablerepo=virt7-testing kubernetes
 
 echo "# The address for the info server to serve on
-KUBELET_ADDRESS="--address=0.0.0.0"
+KUBELET_ADDRESS=\"--address=0.0.0.0\"
 
 # The port for the info server to serve on
-KUBELET_PORT="--port=10250"
+KUBELET_PORT=\"--port=10250\"
 
 # You may leave this blank to use the actual hostname
-KUBELET_HOSTNAME="--hostname_override=${MASTER_ADDR}"
+KUBELET_HOSTNAME=\"--hostname_override=${MASTER_ADDR}\"
 
 # Add your own!
-KUBELET_ARGS=""
+KUBELET_ARGS=\"\"
 " > /etc/kubernetes/kubelet
 
 echo "# Comma separated list of nodes in the etcd cluster
